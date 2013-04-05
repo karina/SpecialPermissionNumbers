@@ -10,6 +10,10 @@ class Account_Controller extends Base_Controller {
   public function get_professor() {
     return View::make('account.professor');
   }
+  
+  public function get_student() {
+    return View::make('account.student');
+  }
 
   public function action_createprof(){
     
