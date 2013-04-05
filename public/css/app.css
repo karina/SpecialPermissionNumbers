@@ -1,0 +1,38 @@
+body {
+  background-image: url("../img/lightpaperfibers.png");
+  width: 80%;  
+  margin: 0 auto;
+}
+
+.login {
+  display: block;
+  margin: 0 auto;
+  width: 65%;
+}
+
+.prof_submit {
+  position: relative;
+  display: block;
+  top: 11px;
+  margin: 0 auto;
+  width: 50%;
+}
+
+legend {
+  background-color: transparent;
+}
+
+fieldset {
+  background-color: white;
+}
+
+.account {
+  display: block;
+  margin: 20% auto;
+  width: 63%;
+}
+
+.welcome {
+  color: #666;
+  text-align: center;
+}
