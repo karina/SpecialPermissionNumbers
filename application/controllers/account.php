@@ -5,8 +5,6 @@
  */
 class Account_Controller extends Base_Controller {
 
-  public $restful = TRUE;
-
   public function get_professor() {
     return View::make('account.professor');
   }
@@ -15,13 +13,17 @@ class Account_Controller extends Base_Controller {
     return View::make('account.student');
   }
 
-  public function action_createprof(){
+  public function post_professor(){
     
     $email = Input::get('email');
     $netid = Input::get('netid');
-    $password = Input::get('password');
+    $password = Hash::make(Input::get('password'));
 
-    return Redirect::to('home/index');
+    $params = array('netid'=> $netid,'password'=>$password, 'email' => $email);
+    
+    $professor = new Professor($params);
+    $professor->save(); 
+    return Redirect::to('/');
   }
 
   public function get_login(){

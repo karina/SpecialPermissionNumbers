@@ -1,7 +1,7 @@
 @layout('layouts/main')
 
 @section('content')
-  <form>
+  <form method="POST" action="/index.php/account/professor">
     <fieldset>
       <legend>Create a Professor Account</legend> 
 
@@ -22,9 +22,17 @@
           <input type="text" name="email">
         </div>
         <div class="large-6 columns">
-          <input class="nice blue radius button prof_submit" type="submit" value="Submit" action="account/createprof">
+         <label>Password Confirmation</label>
+         <input type="text" name="password_confirmation">
         </div>
       </div>
+
+      <div class="row">
+        <div class="large-6 columns">
+          <input class="nice blue radius button prof_submit" type="submit" value="Submit">
+        </div>
+      </div>
+
     </fieldset>
   </form>
 

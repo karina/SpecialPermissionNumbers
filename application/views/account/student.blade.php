@@ -21,6 +21,10 @@
           <label>Email Address</label>
           <input type="text" name="email_addr">
         </div>
+        <div class="large-6 columns">
+          <label>Password Confirmation</label>
+          <input type="text" name="password_confirmation">
+         </div>
       </div>
 
       <div class="row">
@@ -51,10 +55,10 @@
 
       <div class="row">
         <div class="large-2 columns">
-          <input class="nice blue radius button prof_submit" type="submit" value="Submit" action="???">
+          <input class="nice blue radius button student_submit" type="submit" value="Submit" action="???">
         </div>
         <div class="large-2 columns">
-          <input class="nice blue radius button prof_submit" type="reset">
+          <input class="nice blue radius button student_reset" type="reset">
         </div>
       </div>
     </fieldset>
