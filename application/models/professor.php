@@ -5,7 +5,7 @@ class Professor extends Eloquent {
 
   public function __construct($params){
     
-    $this->netid = $params['netid'];
+    $this->net_id = $params['netid'];
     $this->passwd = $params['password'];
     $this->email_addr = $params['email'];
     
@@ -15,7 +15,7 @@ class Professor extends Eloquent {
     
 
     $bindings = array(
-        '0' => $this->netid,
+        '0' => $this->net_id,
         '1' => $this->passwd,
         '2' => $this->email_addr
       );

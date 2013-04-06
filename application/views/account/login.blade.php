@@ -19,7 +19,7 @@
 				</div>
 
 				<div class="small-3 columns">
-					<input class="nice blue radius button prof_submit" type="submit" value="Login" action="???">
+					<input class="nice blue radius button prof_submit" type="submit" value="Login">
 				</div>			
 
 				<div class="small-3 columns">

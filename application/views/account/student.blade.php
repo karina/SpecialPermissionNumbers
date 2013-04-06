@@ -1,7 +1,7 @@
 @layout('layouts/main')
 
 @section('content')
-  <form>
+  <form method="POST" action="/index.php/account/student">
     <fieldset>
       <legend>Create a Student Account</legend> 
 
@@ -55,7 +55,7 @@
 
       <div class="row">
         <div class="large-2 columns">
-          <input class="nice blue radius button student_submit" type="submit" value="Submit" action="???">
+          <input class="nice blue radius button student_submit" type="submit" value="Submit">
         </div>
         <div class="large-2 columns">
           <input class="nice blue radius button student_reset" type="reset">
