@@ -23,6 +23,18 @@ class Professor extends Eloquent {
     
     return $success;
   }
+  
+  public static function lookup($params) {
+    $pass_checked = false;
+
+    $prof = DB::only('select passwd from professor where net_id = ?', $params['net_id']);
+     
+    if($prof) {
+      $pass_checked = Hash::check($params['passwd'], $student);
+    }
+    
+    return $pass_checked; 
+  }
 }
   
 

@@ -1,7 +1,7 @@
 @layout('layouts/main')
 
 @section('content')
-	<form>
+	<form method="POST" action="/index.php/account/login">
 		<fieldset>
 			<legend>Login</legend>
 

@@ -46,14 +46,21 @@ class Account_Controller extends Base_Controller {
 
   public function post_login() {
 
-    $netid = Input::get('netid');
+    $net_id = Input::get('netid');
     $passwd = Input::get('password');
 
     $params = array(
-      'netid' => $netid,
+      'net_id' => $net_id,
       'passwd' => $passwd
     );
+    
+    $is_student = Student::lookup($params);
+    $is_prof = Professor::lookup($params);
 
+    if($is_student || $is_prof)
+      return View::make('account.loginsucces');
+    else
+      return View::make('account.loginfail');
   }
 
 }
