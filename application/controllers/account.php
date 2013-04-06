@@ -19,7 +19,7 @@ class Account_Controller extends Base_Controller {
     
     $professor = new Professor($params);
     $professor->save(); 
-    return Redirect::to('/');
+    return Redirect::home()->with('status', 'You have now registered!');
   }
   
   public function get_student() {

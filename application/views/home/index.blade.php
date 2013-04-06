@@ -1,5 +1,4 @@
 <html>
-
   <head>
     <title>Special Permission Numbers</title>
     <link rel="stylesheet" href="../css/foundation.min.css">
@@ -7,8 +6,12 @@
   </head>
 
   <body>
+    <?php $status = Session::get('status'); ?>
     <div class="row">
       <h1 class="welcome">Welcome!</h1>
+      @if ($status)
+        <h3>{{ $status }}</h3>
+      @endif
     </div>
 
     <div class="row">

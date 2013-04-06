@@ -30,7 +30,7 @@ class Professor extends Eloquent {
     $prof = DB::only('select passwd from professor where net_id = ?', $params['net_id']);
      
     if($prof) {
-      $pass_checked = Hash::check($params['passwd'], $student);
+      $pass_checked = Hash::check($params['passwd'], $prof);
     }
     
     return $pass_checked; 
