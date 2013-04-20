@@ -29,8 +29,4 @@
 
 		</fieldset>
 	</form>
-	
-	<!-- link to home -->
-	<div>
-		<a href="WHERE DOES THIS GO??">Home</a>
-	</div>
+@endsection
