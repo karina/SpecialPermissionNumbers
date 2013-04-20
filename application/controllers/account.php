@@ -31,13 +31,17 @@ class Account_Controller extends Base_Controller {
     $ruid = Input::get('ruid');
     $email = Input::get('email_addr');
     $netid = Input::get('netid');
+    $major = Input::get('major');
+    $grad_year = Input::get('grad_year');
+    $gpa = Input::get('gpa');
+    $credits = Input::get('credits');
     $password = Hash::make(Input::get('password'));
 
-    $params = array('ruid' => $ruid, 'netid'=> $netid,'password'=>$password, 'email' => $email);
+    $params = array('ruid' => $ruid, 'netid'=> $netid,'password'=>$password, 'email' => $email, 'grad_year' => $grad_year, 'major' => $major, 'credits' => $credits, 'gpa' => $gpa);
     
     $student = new Student($params);
     $student->save(); 
-    return Redirect::to('/');
+    return Redirect::home()->with('status', 'You have now registered!');
   }
  
   public function get_login(){
