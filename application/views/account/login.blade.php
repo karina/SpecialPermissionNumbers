@@ -1,7 +1,14 @@
 @layout('layouts/main')
 
 @section('content')
-	<form method="POST" action="/index.php/account/login">
+  @if (Session:has('login_errors'))
+    <div data-alert class="alert-box">
+      Incorrect login information. <a href="{{ URL::to(/) }}">Create Account</a>
+      <a href="#" class="close">&times;</a>
+    </div>
+  @endif
+
+  <form method="POST" action="/index.php/account/login">
 		<fieldset>
 			<legend>Login</legend>
 

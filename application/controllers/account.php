@@ -64,7 +64,7 @@ class Account_Controller extends Base_Controller {
     if($is_student || $is_prof)
       return View::make('account.loginsucces');
     else
-      return View::make('account.loginfail');
+      return Redirect::to('account/login')->with('login_errors', true);
   }
 
 }
