@@ -19,7 +19,7 @@ class Professor extends Eloquent {
         '1' => $this->passwd,
         '2' => $this->email_addr
       );
-    $success = DB::query('insert into professor values (?, ?, ?)', $bindings);
+    $success = DB::query('insert into professors values (?, ?, ?)', $bindings);
     
     return $success;
   }
@@ -27,7 +27,7 @@ class Professor extends Eloquent {
   public static function lookup($params) {
     $pass_checked = false;
 
-    $prof = DB::only('select passwd from professor where net_id = ?', $params['net_id']);
+    $prof = DB::only('select passwd from professors where net_id = ?', $params['net_id']);
      
     if($prof) {
       $pass_checked = Hash::check($params['passwd'], $prof);

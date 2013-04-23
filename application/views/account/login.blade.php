@@ -1,9 +1,9 @@
 @layout('layouts/main')
 
 @section('content')
-  @if (Session:has('login_errors'))
+  @if (Session::has('login_errors'))
     <div data-alert class="alert-box">
-      Incorrect login information. <a href="{{ URL::to(/) }}">Create Account</a>
+      Incorrect login information. <a href="{{ URL::to('/') }}" class="alert-link">Create Account</a>
       <a href="#" class="close">&times;</a>
     </div>
   @endif

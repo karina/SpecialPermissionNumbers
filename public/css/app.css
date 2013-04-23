@@ -4,6 +4,11 @@ body {
   margin: 0 auto;
 }
 
+alert-link {
+  color: black;
+  text-decoration: underline;
+}
+
 .login {
   display: block;
   margin: 10px 0px 10px 100px;
