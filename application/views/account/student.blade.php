@@ -1,5 +1,5 @@
 @layout('layouts/student_account')
 
-@section('title')
-Create Account
+@section('legend')
+Create Student Account
 @endsection

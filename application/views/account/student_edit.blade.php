@@ -1,5 +1,5 @@
 @layout('layouts/student_account')
 
 @section('legend')
-Edit Student Account
+{{ $student->net_id }}  Student Account
 @endsection
