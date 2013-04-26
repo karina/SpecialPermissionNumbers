@@ -87,7 +87,7 @@ class Account_Controller extends Base_Controller {
   public function get_studentedit() {
     if(Auth::check()) {
       $student = Student::where('net_id', '=', Auth::user()->net_id); 
-      return View::make('account.student_edit', $student);
+      return View::make('account.student_edit')->with_student($student);
     
     }
     else
