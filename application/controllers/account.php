@@ -63,24 +63,27 @@ class Account_Controller extends Base_Controller {
 
   public function post_login() {
 
-    $net_id = Input::get('netid');
-    $passwd = Input::get('password');
-
     $params = array(
-      'net_id' => $net_id,
-      'passwd' => $passwd
+      'username' => Input::get('netid'),
+      'password' => Input::get('passwd')
     );
 
     if(Auth::attempt($params)) {
 
-    $is_student = Student::lookup($params);
-    $is_prof = Professor::lookup($params);
-
-    if($is_student || $is_prof)
-      return View::make('account.loginsucess');
+      if($student = Student::where('net_id', '=', Auth::user()->net_id)->first())
+        return Redirect::to('account/studentedit');
+      else
+        return Redirect::to('/'); //TODO whatever we build for profs, redirect here
     }
     else
       return Redirect::to('account/login')->with('login_errors', true);
+  }
+
+  /* Log out */
+  public function get_logout() {
+    Auth::logout();
+
+    return Redirect::home()->with('status', 'You have been logged out');
   }
 
   /* Editing Student Account */
@@ -97,24 +100,18 @@ class Account_Controller extends Base_Controller {
   public function post_studentedit () {
     
     $params = array(
-      'ruid' => Input::get('ruid'), 
-      'net_id'=> Input::get('net_id'),
-      'passwd'=> Hash::make(Input::get('password')), 
-      'email_addr' => Input::get('email'), 
+      'email_addr' => Input::get('email_addr'), 
       'grad_year' => Input::get('grad_year'), 
       'major' => Input::get('major'), 
       'credits' => Input::get('credits'), 
       'gpa' => Input::get('gpa')
     );
 
-    $student = Student::where('net_id', '=', $params['net_id']);
+    $student = Student::where('net_id', '=', Auth::user()->net_id)->first();
     $student->fill($params);
     $student->save();
-
-    $user = User::where('net_id', '=', $params['net_id']);
-    $user->fill(array($params['net_id'],$params['passwd']));
-    $user->save();
-
+    
+    return Redirect::to('account/studentedit')->with('success', true);
   }
 
 }

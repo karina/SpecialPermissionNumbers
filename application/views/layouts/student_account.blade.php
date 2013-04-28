@@ -31,16 +31,25 @@
               <a href="/index.php/account/student">Student</a>
               <ul class="dropdown">
                 <li>
-                  <a href="/index.php/account/student/edit">Edit Account</a>
+                  <a href="/index.php/account/student_edit">Edit Account</a>
                 </li>
               </ul>
             </li>
             <li class="divider"></li>
           </ul>
+
+          @if (Auth::check())
+          <ul class="right">
+            <li class="divider hide-for-small"></li>
+            <li><a href="#">{{ Auth::user()->net_id }}</a></li>
+            <li><a href="/index.php/account/logout">Logout</a></li>
+          </ul>
+          @endif
         </section>
       
       </nav>
 
+      @yield('notifications')
           
       {{ Form::open() }}
         <fieldset>

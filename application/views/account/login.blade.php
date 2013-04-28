@@ -2,7 +2,7 @@
 
 @section('content')
   @if (Session::has('login_errors'))
-    <div data-alert class="alert-box">
+    <div data-alert class="alert-box alert">
       Incorrect login information. <a href="{{ URL::to('/') }}" class="alert-link">Create Account</a>
       <a href="#" class="close">&times;</a>
     </div>
@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="large-6 columns"> 
 					<label for="passwd">Password </label>
-					<input type="password" name="password">
+					<input type="password" name="passwd">
 				</div>
 
 				<div class="small-3 columns">
