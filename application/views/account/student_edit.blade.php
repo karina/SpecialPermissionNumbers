@@ -1,39 +1,26 @@
 @layout('layouts/student_account')
 
+  @section('notifications')
+
+    @if (Session::has('success'))
+      <div data-alert class="alert-box success">
+        Your information has been changed!
+        <a href="#" class="close">&times;</a>
+      </div>
+    @endif
+  
+  @endsection
+  
   @section('legend')
-  Edit Student Account
+    Edit Student Account
   @endsection
   
   @section('fields') 
   
     <div class="row">
       <div class="large-6 columns">
-        {{ Form::label('net_id','NetID') }}
-        {{ Form::text('net_id', $student->net_id) }}
-      </div>
-      
-      <div class="large-6 columns">
-        {{ Form::label('passwd','New Password') }}
-        {{ Form::password('passwd') }}
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-6 columns">
         {{ Form::label('email_addr','Email Address') }}
         {{ Form::text('email_addr', $student->email_addr) }}
-      </div>
-      
-      <div class="large-6 columns">
-        {{ Form::label('password_confirmation','New Password Confirmation') }}
-        {{ Form::password('password_confirmation') }}
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-6 columns">
-        {{ Form::label('ruid','RUID') }}
-        {{ Form::text('ruid', $student->ruid) }}
       </div>
       
       <div class="large-6 columns">
