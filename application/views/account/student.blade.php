@@ -56,4 +56,10 @@ Create Student Account
               {{ Form::text('grad_year') }}
             </div>
           </div>
+<div class="create_request_button">
+    
+      <div class="large-6 columns">
+        <a href="{{URL::to('/../special/request_sp')}}" class="medium button account">Request a Course Special Permission</a>
+      </div>  
+    </div>
           @endsection
