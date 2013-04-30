@@ -21,7 +21,7 @@
             <li class="divider"></li>
             <li><a href="/index.php/special/addcourses">Add Courses</a></li>
             <li class="divider"></li>
-            <li><a href="/index.php/special/getcourses">View Courses</a></li>
+            <li><a href="/index.php/special/profcourses">View Courses</a></li>
             <li class="divider"></li>
           </ul>
 

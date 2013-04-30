@@ -19,7 +19,7 @@ class Create_Courses {
       $table->integer('room_id');
       $table->integer('sec_num');
 
-      $table->string('net_id',64);
+      $table->string('net_id',64)->references('net_id')->on('professors');
     });
 
   }
