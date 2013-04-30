@@ -28,18 +28,6 @@
               <label>Prereqquesite3</label>
               <input type="text" name="prereq3">
           </div>
-         </div>
- <div class="row"
-<form>
-  <fieldset>
-    <legend>Request a course special permission</legend>
-
-    <div class="row">
-      <div class="large-6 columns">
-        <label> Course Number</label>
-        <input type="text" name="netid">
-      </div>
-    </div>
 
        <div class="row">
           <div class="large-6 columns">
@@ -64,15 +52,6 @@
       </div>
     </div>
 
-
-
-
-
-    <div class="row">
-      <div class="large-6 columns">
-        <input class="nice blue radius button create_sp" type="submit" value="Submit">
-      </div>
-    </div>
 
 
 
