@@ -1,3 +1,4 @@
+@layout('layouts/main')
 <html>
   <head>
     <title>Special Permission Numbers</title>

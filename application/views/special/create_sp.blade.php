@@ -1,7 +1,7 @@
 @layout('layouts/main')
 @section('content')
 <form>
-  <fieldset>
+  <fieldset method="POST" action="/index.php/account/professor/create_sp">
     <legend>Create a course special permission</legend>
 
     <div class="row">
@@ -21,11 +21,11 @@
              <input type="text" name="prereq1">
            </div>
           <div class="large-6 columns">
-            <label>Prereqquesite2</label>   
+            <label>Prerequesite2</label>   
             <input type="text" name="prereq2">
           </div>
           <div class="large-6 columns">
-              <label>Prereqquesite3</label> 
+              <label>Prerequesite3</label> 
               <input type="text" name="prereq3">
           </div>
          </div>
