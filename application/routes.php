@@ -38,6 +38,7 @@ Route::get('/', function()
 });
 
 Route::controller('account');
+Route::controller('special');
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers
