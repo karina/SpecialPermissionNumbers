@@ -73,7 +73,7 @@ class Account_Controller extends Base_Controller {
       if($student = Student::where('net_id', '=', Auth::user()->net_id)->first())
         return Redirect::to('account/studentedit');
       else
-        return Redirect::to('/'); //TODO whatever we build for profs, redirect here
+        return Redirect::to('special/create_sp');
     }
     else
       return Redirect::to('account/login')->with('login_errors', true);
