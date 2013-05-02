@@ -1,7 +1,8 @@
 @layout('layouts/main')
 @section('content')
-<form>
-  <fieldset method="POST" action="/index.php/account/professor/create_sp">
+
+  <form method="POST" action="/index.php/account/professor/create_sp">
+    <fieldset>
     <legend>Create a course special permission</legend>
 
     <div class="row">

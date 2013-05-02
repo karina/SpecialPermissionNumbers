@@ -36,12 +36,4 @@
     </fieldset>
   </form>
 
-
-   <div class="create_sp_button">
-      
-      <div class="large-6 columns">
-        <a href="{{URL::to('//special/create_sp')}}" class="medium button account">Create a Course Special Permission</a>
-      </div>  
-    </div>
-a
 @endsection
