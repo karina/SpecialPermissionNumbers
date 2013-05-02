@@ -1,4 +1,4 @@
-@layout('layouts/main')
+
 <html>
   <head>
     <title>Special Permission Numbers</title>
@@ -14,7 +14,8 @@
     </div>
 
     <div class="row">
-      <h3 class="welcome">Welcome!</h3>
+      <h4 class="welcome">Welcome to the online registration system</h4>
+      
       <p class="create_directions"> To Create an account follow the links below </p>
       @if ($status)
         <h3>{{ $status }}</h3>

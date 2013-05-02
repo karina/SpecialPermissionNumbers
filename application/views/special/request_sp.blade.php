@@ -2,7 +2,7 @@
 
 <form>
   <fieldset>
-    <legend>Create a course special permission</legend>
+    <legend>Request a course special permission</legend>
 
     <div class="row">
       <div class="large-6 columns">
@@ -17,15 +17,15 @@
 
        <div class="row">
           <div class="large-6 columns">
-           <label>Prerequesite1</label>
+           <label>Prerequesite 1</label>
              <input type="text" name="prereq1">
            </div>
           <div class="large-6 columns">
-            <label>Prereqquesite2</label>
+            <label>Prerequesite 2</label>
             <input type="text" name="prereq2">
           </div>
           <div class="large-6 columns">
-              <label>Prereqquesite3</label>
+              <label>Prerequesite3</label>
               <input type="text" name="prereq3">
           </div>
 
