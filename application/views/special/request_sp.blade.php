@@ -1,6 +1,6 @@
 @layout('layouts/main')
-
-<form method="POST" action="/index.php/account/professor/request_sp"  > 
+@section('content')
+<form method="POST" action="request_sp.php"  > 
   <fieldset>
     <legend>Request a course special permission</legend>
 

@@ -63,6 +63,7 @@ class Account_Controller extends Base_Controller {
     Auth::login($user);
 
     return Redirect::to('account/studentedit');
+    
   }
   
  /* Login functionality */ 
@@ -81,6 +82,7 @@ class Account_Controller extends Base_Controller {
 
       if($student = Student::where('net_id', '=', Auth::user()->net_id)->first())
         return Redirect::to('account/studentedit');
+       
       else
         return Redirect::to('special/create_sp');
         return Redirect::to('special/addcourses'); //TODO whatever we build for profs, redirect here
