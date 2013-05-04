@@ -7,7 +7,7 @@
     <div class="row">
       <div class="large-6 columns">
         <label> Course Number</label>
-        <input type="text" name="netid">
+        <input type="text" name="coursenum">
       </div>
       <div class= "large-6 colums">
         <label> Course Section </label>
@@ -52,7 +52,8 @@
       </div>
     </div>
 
-
+   </fieldset>
+   </form>
 
 
 @endsection
