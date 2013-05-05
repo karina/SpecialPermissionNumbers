@@ -84,7 +84,6 @@ class Account_Controller extends Base_Controller {
        
       else
         return Redirect::to('special/create_sp');
-     
     }
     else
       return Redirect::to('account/login')->with('login_errors', true);

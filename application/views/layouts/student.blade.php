@@ -44,24 +44,10 @@
       
       </nav>
 
-      @yield('notifications')
-          
-      {{ Form::open() }}
-        <fieldset>
-          <legend>@yield('legend')</legend>
+      @yield('content')
 
-          @yield('fields')
-          <div class="row">
-            <div class="large-2 columns">
-              <input class="nice blue radius button student_submit" type="submit" value="Submit">
-            </div>
-          
-            <div class="large-2 columns">
-              <input class="nice blue radius button student_reset" type="reset">
-            </div>
-          </div>
-        </fieldset>
-      {{ Form::close() }}  
     </div>
   </body>
 </html>
+
+
