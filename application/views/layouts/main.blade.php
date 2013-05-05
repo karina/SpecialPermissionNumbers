@@ -22,6 +22,12 @@
             <li class="has-dropdown">
               <a href="/index.php/account/professor">Professor</a>
               <ul class="dropdown">
+                  <li>
+                   <a href="/index.php/special/create_sp">Create Special Permission</a>
+                  <li>
+                  <li>
+                  <a href="/index.php/ranking/student_rank">Student Rank Status</a>
+                  <li>
               </ul>
             </li>
             <li class="divider"></li>
@@ -31,8 +37,11 @@
               <a href="/index.php/account/student">Student</a>
               <ul class="dropdown">
                 <li>
-                  <a href="/index.php/account/student/edit">Edit Account</a>
+                  <a href="/index.php/account/student/student_edit">Edit Account</a>
                 </li>
+                <li>
+                  <a href="/index.php/special/request_sp">Request Special Permission</a>
+                <li>
               </ul>
             </li>
             <li class="divider"></li>

@@ -33,9 +33,8 @@ class Account_Controller extends Base_Controller {
 
   /* Creating a Student Account */ 
   public function get_student() {
-    $student = array();
 
-    return View::make('account.student', $student);
+    return View::make('account.student');
   }
 
   public function post_student() {
@@ -63,6 +62,7 @@ class Account_Controller extends Base_Controller {
     Auth::login($user);
 
     return Redirect::to('account/studentedit');
+    
   }
   
  /* Login functionality */ 
@@ -81,8 +81,9 @@ class Account_Controller extends Base_Controller {
 
       if($student = Student::where('net_id', '=', Auth::user()->net_id)->first())
         return Redirect::to('account/studentedit');
+       
       else
-        return Redirect::to('special/addcourses'); //TODO whatever we build for profs, redirect here
+        return Redirect::to('special/create_sp');
     }
     else
       return Redirect::to('account/login')->with('login_errors', true);

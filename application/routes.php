@@ -38,7 +38,7 @@ Route::get('/', function()
 });
 
 Route::controller('account');
-
+Route::controller('ranking');
 Route::controller('special');
 /*
 |--------------------------------------------------------------------------
