@@ -38,3 +38,6 @@ logs/
 Icon?
 ehthumbs.db
 Thumbs.db
+*.swo
+*.swm
+*.swp
