@@ -24,7 +24,10 @@
               <ul class="dropdown">
                 <li><a href="/index.php/special/create_dp">Create Special Perm Number</a></li>
               </ul>
-             </li>
+            </li>
+            <li class="has-dropdown">
+              <a href="/index.php/ranking/student_rank">Students</a>
+            </li>
           </ul>
 
           @if (Auth::check())
