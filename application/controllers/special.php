@@ -21,8 +21,16 @@ class  Special_Controller extends Base_Controller{
     $request->fill($params);
     $request->save();
 
-    return Redirect::to('special/request_sp.php');
+    return Redirect::to('special/all_requests');
+  }
+
+  public function get_all_requests() {
+
+    $requests = Request::where('net_id', '=', Auth::user()->net_id);
+
+    return View::make('special.all_requests')->with_requests('requests');
   } 
+
   public function get_create_sp() {
       return View::make('special.create_sp');
   }
