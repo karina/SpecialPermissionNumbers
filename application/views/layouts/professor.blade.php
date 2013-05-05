@@ -19,10 +19,12 @@
         <section class="top-bar-section">
           <ul class="left">
             <li class="divider"></li>
-            <li><a href="/index.php/special/addcourses">Add Courses</a></li>
-            <li class="divider"></li>
-            <li><a href="/index.php/special/profcourses">View Courses</a></li>
-            <li class="divider"></li>
+            <li class="has-dropdown">
+              <a href="/index.php/special/create_sp">Courses</a>
+              <ul class="dropdown">
+                <li><a href="/index.php/special/create_dp">Create Special Perm Number</a></li>
+              </ul>
+             </li>
           </ul>
 
           @if (Auth::check())

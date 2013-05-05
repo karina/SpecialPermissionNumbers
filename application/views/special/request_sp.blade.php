@@ -1,4 +1,4 @@
-@layout('layouts/main')
+@layout('layouts/student')
 @section('content')
 <form method="POST" action="request_sp.php"  > 
   <fieldset>
