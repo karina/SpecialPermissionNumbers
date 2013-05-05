@@ -11,7 +11,7 @@ class Special_Controller extends Base_Controller{
     
     $params = array(
       "cid" => Input::get('coursenum'),
-      "net_id" => Student::where('net_id', '=', Auth::user->net_id)->first(),
+      "net_id" => Student::where('net_id', '=', Auth::user()->net_id)->first(),
       "first" => Input::get('sec1'),
       "second" => Input::get('sec2'),
       "third" => Input::get('sec3')
@@ -27,9 +27,9 @@ class Special_Controller extends Base_Controller{
 
   public function get_all_requests() {
 
-    $requests = Request::where('net_id', '=', Auth::user->net_id)->first();
+    $requests = Request::where('net_id', '=', Auth::user->net_id->())->first();
 
-    return View::make('special.all_requests')->with_requests('requests');
+    return View::make('special.all_requests')->with_requests($requests);
   } 
 
   public function get_create_sp() {
