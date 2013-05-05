@@ -17,6 +17,7 @@ class Create_Courses {
       $table->integer('max_students');
       $table->integer('num_students');
       $table->integer('room_id');
+      $table->integer('sec_num');
 
       $table->string('net_id',64);
     });

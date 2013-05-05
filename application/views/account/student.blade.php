@@ -56,4 +56,6 @@ Create Student Account
               {{ Form::text('grad_year') }}
             </div>
           </div>
+
+    
           @endsection

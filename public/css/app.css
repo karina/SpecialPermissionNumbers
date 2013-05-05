@@ -38,10 +38,15 @@ margin: 0 auto;
 legend {
   background-color: transparent;
 }
+form {
+    
+}
 
 fieldset {
-  background-color: white;
+  background-color: white; 
 }
+
+
 
 .account {
   display: block;

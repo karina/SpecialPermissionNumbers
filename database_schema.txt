@@ -62,7 +62,6 @@ CREATE TABLE Special_permission_num(
 	section_num INT,
 	sp_num INT,
 
-	prof VARCHAR(64) NOT NULL,
 	stud VARCHAR(64),
 	status,
 
@@ -71,9 +70,6 @@ CREATE TABLE Special_permission_num(
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY(section_num) REFERENCES Course_section(cid)
-		ON DELETE CASCADE
-		ON UPDATE CASCADE,
-	FOREIGN KEY(prof) REFERENCES Professor(net_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY(stud) REFERENCES Student(net_id)
