@@ -10,16 +10,24 @@ class Account_Controller extends Base_Controller {
   }
   
   public function post_professor(){
-    
-    $email = Input::get('email');
-    $netid = Input::get('netid');
-    $password = Hash::make(Input::get('password'));
+    $prof = new Professor;
 
-    $params = array('netid'=> $netid,'password'=>$password, 'email' => $email);
-    
-    $professor = new Professor($params);
-    $professor->save(); 
-    return Redirect::home()->with('status', 'You have now registered!');
+    $params = array(
+      'net_id' => Input::get('net_id'),
+      'email_addr' => Input::get('email_addr'),
+      'passwd' => Hash::make(Input::get('passwd'))
+    ); 
+
+    $prof->fill($params); 
+    $prof->save();
+
+    $param = array('net_id' => $params['net_id'], 'passwd' => $params['passwd']);
+    $user = User::create($param);
+    $user->save();
+
+    Auth::login($user);
+
+    return Redirect::to('special/all_requests');
   }
 
   /* Creating a Student Account */ 
