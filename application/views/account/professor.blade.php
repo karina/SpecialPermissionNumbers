@@ -8,18 +8,18 @@
       <div class="row">
         <div class="large-6 columns">
           <label>NetID</label>
-          <input type="text" name="netid">
+          <input type="text" name="net_id">
         </div>
         <div class="large-6 columns">
           <label>Password</label>
-          <input type="text" name="password">
+          <input type="text" name="passwd">
         </div>
       </div>
 
       <div class="row">
         <div class="large-6 columns">
           <label>Email Address</label>
-          <input type="text" name="email">
+          <input type="text" name="email_addr">
         </div>
         <div class="large-6 columns">
          <label>Password Confirmation</label>
@@ -35,4 +35,5 @@
 
     </fieldset>
   </form>
+
 @endsection
