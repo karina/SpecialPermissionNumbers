@@ -20,23 +20,15 @@
           <ul class="left">
             <li class="divider"></li>
             <li class="has-dropdown">
-              <a href="/index.php/account/professor">Professor</a>
-              <ul class="dropdown">
-              </ul>
-            </li>
-            <li class="divider"></li>
-          </ul>
-          <ul class="left">
-            <li class="has-dropdown">
-              <a href="/index.php/account/student">Student</a>
+              <a href="/index.php/account/professor">Account</a>
               <ul class="dropdown">
                 <li>
-                  <a href="/index.php/account/student/student_edit">Edit Account</a>
+                  <a href="/index.php/account/student_edit">Edit Account</a>
                 </li>
+                <li class="divider"></li>
                 <li>
-                  <a href="/index.php/special/request_sp">Request Special Permission</a>
+                  <a href="/index.php/special/request_sp">Request Special Perm Number</a>
                 </li>
-
               </ul>
             </li>
             <li class="divider"></li>
