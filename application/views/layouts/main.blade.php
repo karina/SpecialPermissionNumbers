@@ -26,7 +26,7 @@
                    <a href="/index.php/special/create_sp">Create Special Permission</a>
                   <li>
                   <li>
-                  <a href="/index.php/rank/student_rank.blade.php">Student Rank Status</a>
+                  <a href="/index.php/ranking/student_rank">Student Rank Status</a>
                   <li>
               </ul>
             </li>

@@ -20,35 +20,35 @@
       <div class="row"> 
           <div class="large-6 columns">
            <label>Prerequesite 1</label>
-             <input type="text" name="prereq1">
+             <input type="text" name="prereq1" id="prereq1 ">
            </div>
           <div class="large-6 columns">
             <label>Prerequesite 2</label>
-            <input type="text" name="prereq2">
+            <input type="text" name="prereq2" id="prereq2 "> 
           </div>
        </div> 
         
         <div class="row">
           <div class="large-6 columns">
               <label>Prerequesite 3</label>
-              <input type="text" name="prereq3">
+              <input type="text" name="prereq3"  id="prereq3">
           </div>
         </div>
 
        <div class="row">
           <div class="large-6 columns">
            <label>Section Choice 1</label>
-             <input type="text" name="sec1">
+             <input type="text" name="sec1" id="sec1">
            </div>
           <div class="large-6 columns">
             <label>Section Choice 3</label>
-            <input type="text" name="sec3">
+            <input type="text" name="sec3" id="sec3">
           </div>
       </div>
       <div class="row">
           <div class="large-6 columns">
               <label>Section Choice 2</label>
-              <input type="text" name="sec2">
+              <input type="text" name="sec2" id= "sec2">
           </div>
       </div> 
 
