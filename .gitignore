@@ -1,1 +1,6 @@
 logs/
+
+# OS generated files
+*.swo
+*.swm
+*.swp
