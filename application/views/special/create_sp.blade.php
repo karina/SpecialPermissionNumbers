@@ -1,4 +1,4 @@
-@layout('layouts/main')
+@layout('layouts/professor')
 @section('content')
 
   <form method="POST" action="/index.php/account/professor/create_sp">
