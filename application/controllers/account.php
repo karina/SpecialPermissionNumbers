@@ -33,9 +33,8 @@ class Account_Controller extends Base_Controller {
 
   /* Creating a Student Account */ 
   public function get_student() {
-    $student = array();
 
-    return View::make('account.student', $student);
+    return View::make('account.student');
   }
 
   public function post_student() {
@@ -85,7 +84,6 @@ class Account_Controller extends Base_Controller {
        
       else
         return Redirect::to('special/create_sp');
-        return Redirect::to('special/addcourses'); //TODO whatever we build for profs, redirect here
      
     }
     else
