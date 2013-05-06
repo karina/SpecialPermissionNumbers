@@ -28,7 +28,7 @@ class Account_Controller extends Base_Controller {
 
     Auth::login($user);
 
-    return Redirect::to('special/addcourses');
+    return Redirect::to('special/all_requests');
   }
 
   /* Creating a Student Account */ 

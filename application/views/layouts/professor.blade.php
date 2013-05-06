@@ -26,7 +26,10 @@
                 <li><a href="/index.php/room/view">View Rooms</a></li>
                 <li><a href="/index.php/room/add">Add Rooms</a></li>
               </ul>
-             </li>
+            </li>
+            <li class="has-dropdown">
+              <a href="/index.php/ranking/student_rank">Students</a>
+            </li>
           </ul>
 
           @if (Auth::check())
