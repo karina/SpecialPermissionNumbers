@@ -9,15 +9,15 @@ class Create_Rooms {
 	 */
 	public function up()
 	{
-    Schema::create('rooms', function($table) {
-      $table->increments('id');
+		// Currently, building info is stored in room_num as "BUILDING-NUM"
+		// ex. "HILL-252"
+		Schema::create('rooms', function($table) {
+			$table->increments('id');
 
-      $table->integer('max_seats');
-      $table->integer('room_num');
-      
-    });
-
-  }
+			$table->integer('room_num');
+			$table->integer('max_seats');
+		});
+	}
 
 	/**
 	 * Revert the changes to the database.
@@ -26,8 +26,7 @@ class Create_Rooms {
 	 */
 	public function down()
 	{
-    Schema::drop('rooms');
-  }
-
+		Schema::drop('rooms');
+	}
 
 }
