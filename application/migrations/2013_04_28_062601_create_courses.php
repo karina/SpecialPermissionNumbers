@@ -13,7 +13,7 @@ class Create_Courses {
 			$table->increments('id');
 
 			$table->integer('course_id');
-			$table->integer('sec_num')
+			$table->integer('sec_num');
 			
 			$table->string('net_id',64);
 			$table->integer('max_students');
