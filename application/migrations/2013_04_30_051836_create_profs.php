@@ -9,14 +9,13 @@ class Create_Profs {
 	 */
 	public function up()
 	{
-    Schema::create('professors', function($table) {
-      $table->increments('id');
-  
-      $table->string('net_id', 64);
-      $table->string('email_addr',64);
-      $table->string('passwd', 64);
+		Schema::create('professors', function($table) {
+			$table->increments('id');
 
-    });
+			$table->string('net_id',64);
+			$table->string('passwd',64);
+			$table->string('email_addr',64);
+		});
 	}
 
 	/**
@@ -26,7 +25,7 @@ class Create_Profs {
 	 */
 	public function down()
 	{
-    Schema::drop('professors');
+		Schema::drop('professors');
 	}
 
 }
