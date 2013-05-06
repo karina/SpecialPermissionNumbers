@@ -1,6 +1,6 @@
 <?php
 
-class Create_Profs {
+class Create_Registered_Courses {
 
 	/**
 	 * Make changes to the database.
@@ -9,12 +9,12 @@ class Create_Profs {
 	 */
 	public function up()
 	{
-		Schema::create('professors', function($table) {
+		Schema::create('registered_courses', function($table) {
 			$table->increments('id');
 
 			$table->string('net_id',64);
-			$table->string('passwd',64);
-			$table->string('email_addr',64);
+			$table->integer('cid');
+			$table->float('grade');
 		});
 	}
 
@@ -25,7 +25,7 @@ class Create_Profs {
 	 */
 	public function down()
 	{
-		Schema::drop('professors');
+		Schema::drop('registered_courses');
 	}
 
 }
