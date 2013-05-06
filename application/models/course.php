@@ -1,8 +1,8 @@
 <?php 
 
-Class Course_section extends Eloquent {
+Class Course extends Eloquent {
 
-  public static $table = 'course_sections';
+  public static $table = 'courses';
   public static $timestamps = false;
 
   public function net () {
