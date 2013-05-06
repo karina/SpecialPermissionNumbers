@@ -134,3 +134,14 @@ CREATE TABLE Room(
 	room_num VARCHAR(64) PRIMARY KEY,
 	max_seats INT
 );
+
+CREATE TABLE Email(
+	net_id VARCHAR(64),
+	email_body TEXT,
+	ts TIMESTAMP,
+
+	PRIMARY KEY(net_id, ts),
+	FOREIGN KEY(net_id) REFERENCES Professor(net_id)
+		ON DELETE CASCADE,
+		ON UPDATE CASCADE
+);
