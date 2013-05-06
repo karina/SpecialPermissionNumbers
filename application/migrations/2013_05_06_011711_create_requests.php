@@ -9,7 +9,7 @@ class Create_Requests {
 	 */
 	public function up()
 	{
-		Schema::create('requests', function($table) {
+		Schema::create('permrequests', function($table) {
 		  $table->increments('id');
 		
 		  $table->string('net_id',64);
@@ -33,7 +33,7 @@ class Create_Requests {
 	 */
 	public function down()
 	{
-		Schema::drop('requests');
+		Schema::drop('permrequests');
 	}
 
 }
