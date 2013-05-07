@@ -15,4 +15,8 @@ Class Course extends Eloquent {
     return $this->has_one('Room');
   }
 
+  public function permrequests () {
+
+    return $this->has_many('Permrequest', 'course_id');
+  }
 }
