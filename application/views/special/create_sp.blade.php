@@ -4,11 +4,11 @@
     <fieldset>
       <legend>Add Special Permission Number</legend>
 
-      <div class"row">
+<!--       <div class"row">
         <div class "large-12 columns">
           <p id="instructions">Add a special permission number here:</P>
         </div>
-      </div>
+      </div> -->
 
       <div class="row">
         <div class="large-6 columns">

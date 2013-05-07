@@ -24,7 +24,7 @@ class Create_Special_Permission_Nums {
 			$table->string('student',64)->nullable();
 		});
 	}
-
+	
 	/**
 	 * Revert the changes to the database.
 	 *
