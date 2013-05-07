@@ -1,9 +1,9 @@
 <?php
 
-class Request extends Eloquent {
+class Permrequest extends Eloquent {
 
-  public static $table = 'requests';
+  public static $table = 'permrequests';
 
-  protected $fillable = array('cid', 'net_id', 'first', 'second', 'third');
+  protected $fillable = array('course_id', 'net_id', 'first', 'second', 'third');
 }
 

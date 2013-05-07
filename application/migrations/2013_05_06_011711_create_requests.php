@@ -13,7 +13,7 @@ class Create_Requests {
 		  $table->increments('id');
 		
 		  $table->string('net_id',64);
-		  $table->integer('cid');
+		  $table->integer('course_id');
 		  $table->timestamp('ts');
 		
 		  $table->integer('first');   // first choice section
