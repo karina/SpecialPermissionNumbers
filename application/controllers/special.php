@@ -41,6 +41,15 @@ class Special_Controller extends Base_Controller{
     return View::make('special.all_requests')->with_requests($requests);
   } 
 
+  public function get_prof_view_requests(){
+      
+    $allrequests = Permrequest::order_by('course_id','desc')->get();
+
+    return View::make('special.prof_view_requests')->with_allrequests($allrequests);
+  
+  }
+
+
   public function get_create_sp() {
     return View::make('special.create_sp');
   }

@@ -29,7 +29,7 @@
 
       <div class="row">
         <div class="large-6 columns">
-          <input class="nice blue radius button prof_submit" type="submit" value="Submit">
+          <input class="nice blue radius button addcourse_submit" type="submit" value="Submit">
         </div>
       </div>
 
@@ -39,20 +39,3 @@
 @endsection
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--citation: -http://www.tutorialsscripts.com/free-java-scripts/dom/html-element/create-dynamic-multiple/add-more-text-box.php-->
