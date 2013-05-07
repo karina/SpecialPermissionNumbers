@@ -19,7 +19,7 @@
 
   
 	<div class="small-3 columns">
-    <a href="{{ URL::to('rooms/add') }}" class="medium button">Add a Room</a>
+    <a href="{{ URL::to('room/add') }}" class="medium button">Add a Room</a>
   </div>
 
   </div>			

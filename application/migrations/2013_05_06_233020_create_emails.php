@@ -10,7 +10,7 @@ class Create_Emails {
 	public function up()
 	{
 		Schema::create('emails', function($table) {
-			$table->imcrements('id');
+			$table->increments('id');
 
 			$table->string('net_id',64);
 			$table->timestamp('created_at');
