@@ -18,10 +18,10 @@ class Special_Controller extends Base_Controller{
       "third" => Input::get('sec3')
     );
 
-    $permrequest = new Permrequest;
+    $request = new Permrequest;
 
-    $permrequest->fill($params);
-    $permrequest->save();
+    $request->fill($params);
+    $request->save();
 
     return Redirect::to('special/all_requests');
   }
@@ -49,6 +49,11 @@ class Special_Controller extends Base_Controller{
       "student" => null
     );
 
-    $request = new 
+    $sp_number = new Special_permission_num;
+
+    $sp_number->fill($params);
+    $sp_number->save();
+
+    return View::make('special.create_sp');
   }
 }
