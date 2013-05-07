@@ -39,19 +39,7 @@ class Special_Controller extends Base_Controller{
   public function get_create_sp() {
     return View::make('special.create_sp');
   }
-
-  public function post_create_sp() {
-    $params = array(
-      "cid" => Input::get('coursenumber'),
-      "section_num" => Input::get('coursesection'),
-      "sp_num" => Input::get("sp_num"),
-
-      "status" => 0,
-      "student" => null
-    );
-
-    $request = new 
-  }
+  
 
   public function get_addcourses() {
     return View::make('special.addcourses');
