@@ -13,7 +13,8 @@ class Create_Emails {
 			$table->imcrements('id');
 
 			$table->string('net_id',64);
-			$table->timestamp('ts');
+			$table->timestamp('created_at');
+			$table->timestamp('updated_at');
 			$table->text('email_body');
 		});
 	}
