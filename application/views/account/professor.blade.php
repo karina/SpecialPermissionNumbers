@@ -7,23 +7,23 @@
 
       <div class="row">
         <div class="large-6 columns">
-          <label>NetID</label>
-          <input type="text" name="net_id">
+          {{ Form::label('net_id','NetID') }}
+          {{ Form::text('net_id') }}
         </div>
         <div class="large-6 columns">
-          <label>Password</label>
-          <input type="text" name="passwd">
+          {{ Form::label('passwd','Password') }}
+          {{ Form::password('passwd') }}
         </div>
       </div>
 
       <div class="row">
         <div class="large-6 columns">
-          <label>Email Address</label>
-          <input type="text" name="email_addr">
+          {{ Form::label('email_addr','Email Address') }}
+          {{ Form::text('email_addr') }}
         </div>
         <div class="large-6 columns">
-         <label>Password Confirmation</label>
-         <input type="text" name="password_confirmation">
+          {{ Form::label('password_confirmation','Password Confirmation') }}
+          {{ Form::password('password_confirmation') }}
         </div>
       </div>
 
