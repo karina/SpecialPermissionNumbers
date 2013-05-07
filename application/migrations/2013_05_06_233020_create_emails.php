@@ -1,6 +1,6 @@
 <?php
 
-class Create_Profs {
+class Create_Emails {
 
 	/**
 	 * Make changes to the database.
@@ -9,12 +9,13 @@ class Create_Profs {
 	 */
 	public function up()
 	{
-		Schema::create('professors', function($table) {
-			$table->increments('id');
+		Schema::create('emails', function($table) {
+			$table->imcrements('id');
 
 			$table->string('net_id',64);
-			$table->string('passwd',64);
-			$table->string('email_addr',64);
+			$table->timestamp('created_at');
+			$table->timestamp('updated_at');
+			$table->text('email_body');
 		});
 	}
 
@@ -25,7 +26,7 @@ class Create_Profs {
 	 */
 	public function down()
 	{
-		Schema::drop('professors');
+		Schema::drop('emails');
 	}
 
 }
