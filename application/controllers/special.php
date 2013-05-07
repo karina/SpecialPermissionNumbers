@@ -41,7 +41,7 @@ class Special_Controller extends Base_Controller{
 
   public function post_create_sp() {
     $params = array(
-      "cid" => Input::get('coursenumber'),
+      "course_id" => Input::get('coursenumber'),
       "section_num" => Input::get('coursesection'),
       "sp_num" => Input::get("sp_num"),
 
