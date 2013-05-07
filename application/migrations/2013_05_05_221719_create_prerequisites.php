@@ -1,6 +1,6 @@
 <?php
 
-class Create_Profs {
+class Create_Prerequisites {
 
 	/**
 	 * Make changes to the database.
@@ -9,12 +9,12 @@ class Create_Profs {
 	 */
 	public function up()
 	{
-		Schema::create('professors', function($table) {
+		Schema::create('prerequisites', function($table) {
 			$table->increments('id');
 
-			$table->string('net_id',64);
-			$table->string('passwd',64);
-			$table->string('email_addr',64);
+			$table->integer('cid');
+			$table->integer('set_id');
+			$table->integer('prereq');
 		});
 	}
 
@@ -25,7 +25,7 @@ class Create_Profs {
 	 */
 	public function down()
 	{
-		Schema::drop('professors');
+		Schema::drop('prerequisites');
 	}
 
 }
