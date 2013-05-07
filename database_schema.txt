@@ -35,8 +35,8 @@ CREATE TABLE Professor(
 );
 
 -- Students' special permission requests
-CREATE TABLE Request(
-	cid INT,
+CREATE TABLE Permrequest(
+	course_id INT,
 	net_id INT,
 
 	status,			-- status of request
@@ -46,8 +46,8 @@ CREATE TABLE Request(
 	second INT,		-- second choice
 	third INT,		-- third choice
 	comment VARCHAR(5000),
-	PRIMARY KEY(cid, net_id),
-	FOREIGN KEY(cid) REFERENCES Course(cid)
+	PRIMARY KEY(course_id, net_id),
+	FOREIGN KEY(course_id) REFERENCES Course(cid)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY(net_id) REFERENCES Student(net_id)
