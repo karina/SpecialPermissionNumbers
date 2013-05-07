@@ -11,13 +11,13 @@ class Special_Controller extends Base_Controller{
     
     $params = array(
       "cid" => Input::get('coursenum'),
-      "net_id" => Student::where('net_id', '=', Auth::user()->net_id)->first(),
+      "net_id" => Auth::user()->net_id,
       "first" => Input::get('sec1'),
       "second" => Input::get('sec2'),
       "third" => Input::get('sec3')
     );
 
-    $request = new Request;
+    $request = new Permrequest;
 
     $request->fill($params);
     $request->save();
@@ -27,7 +27,7 @@ class Special_Controller extends Base_Controller{
 
   public function get_all_requests() {
 
-    $requests = Request::where('net_id', '=', Auth::user->net_id->())->first();
+    $requests = Permrequest::where('net_id', '=', Auth::user()->net_id)->get();
 
     return View::make('special.all_requests')->with_requests($requests);
   } 
