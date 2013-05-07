@@ -6,6 +6,12 @@
 
     <div class="row">
       <div class="large-6 columns">
+        @if (Session::has('error'))
+          <div class="alert alert-box">
+            {{ Session::get('error') }}
+            <a href="" class="close">&times;</a>
+          </div>
+        @endif
         <label for= "coursenum"> Course Number</label>
         <input type="text" name="coursenum" id="coursenum" >
       </div>

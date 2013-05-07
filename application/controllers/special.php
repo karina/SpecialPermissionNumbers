@@ -9,20 +9,24 @@ class Special_Controller extends Base_Controller{
   }
 
   public function post_request_sp(){
+    // TODO: check that user is a student
     
-    $params = array(
-      "course_id" => Input::get('coursenum'),
-      "net_id" => Student::where('net_id', '=', Auth::user()->net_id),
+    $course = Course::where('course_id', '=', Input::get('coursenum'))
+      ->first();
 
+    if (is_null($course)) {
+      return Redirect::to('special/request_sp')->with('error', 'Unknown Course Entered');
+    }
+
+    $params = array(
+      "course_id" => $course->course_id,
+      "net_id" => Auth::user()->net_id,
       "first" => Input::get('sec1'),
       "second" => Input::get('sec2'),
       "third" => Input::get('sec3')
     );
 
-    $request = new Permrequest;
-
-    $request->fill($params);
-    $request->save();
+    $request = Permrequest::create($params);
 
     return Redirect::to('special/all_requests');
   }
@@ -39,9 +43,36 @@ class Special_Controller extends Base_Controller{
   public function get_create_sp() {
     return View::make('special.create_sp');
   }
-  
+  public function get_addprereq(){
+    return View::make('special.addprereq');
+    
+  }
 
   public function get_addcourses() {
     return View::make('special.addcourses');
   }
+  
+
+   public function post_addcourses(){
+    $params = array(
+      
+      "course_id"=> Input::get('c_id'), 
+      "sec_num"=> Input::get('sec_num'),
+      "net_id"=> Auth::user()->net_id,
+      "max_students"=> Input::get('max_students'),
+      "num_students"=> Input::get('num_students'),
+      "room_num"=> Input::get('room_num')
+      );
+      
+      $courses = new Course;
+     
+      $courses->fill($params);
+      $courses->save();
+
+      return Redirect::to('special/addprereq');
+  
+ }
+   
+
+
 }

@@ -1,6 +1,6 @@
 @layout('layouts/professor')
 @section('content')
-  <form method="POST" action="/index.php/account/professor/create_sp">
+  <form method="POST" action="/index.php/account/special/create_sp">
     <fieldset>
       <legend>Add Special Permission Number</legend>
 
@@ -30,6 +30,7 @@
 
       <div class="row">
         <div class="large-6 columns">
+          
           <input class="nice blue radius button create_sp" type="submit" value="Submit">
         </div>
       </div>
