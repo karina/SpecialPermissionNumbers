@@ -8,7 +8,7 @@
       <div class="row">
         <div class="large-6 columns">
           {{ Form::label('net_id','NetID') }}
-              {{ Form::text('net_id') }}
+          {{ Form::text('net_id') }}
         </div>
         <div class="large-6 columns">
           {{ Form::label('passwd','Password') }}
