@@ -26,6 +26,7 @@ class Special_Controller extends Base_Controller{
       "third" => Input::get('sec3')
     );
 
+
     $request = Permrequest::create($params);
 
     return Redirect::to('special/all_requests');
@@ -47,6 +48,7 @@ class Special_Controller extends Base_Controller{
     return View::make('special.addprereq');
     
   }
+
 
   public function get_addcourses() {
     return View::make('special.addcourses');
@@ -74,5 +76,20 @@ class Special_Controller extends Base_Controller{
  }
    
 
+  public function post_create_sp() {
+    // Create new sp number and add to special_permission_nums table
+    $params = array(
+      "course_id" => Input::get('coursenumber'),
+      "section_num" => Input::get('coursesection'),
+      "sp_num" => Input::get("spnum"),
+
+
+    $sp_number = new SpecialPermissionNum;
+
+    $sp_number->fill($params);
+    $sp_number->save();
+
+    return Redirect::to('special/create_sp');
+  }
 
 }

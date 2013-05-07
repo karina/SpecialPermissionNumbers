@@ -8,7 +8,7 @@ class Email_Controller extends Base_Controller {
   }
 
   public function post_new_email () {
-
+    // Create new email and add to emails table
     $params = array(
       'net_id' => Auth::user()->net_id,
       'email_body' => Input::get('content')

@@ -1,6 +1,6 @@
 @layout('layouts/professor')
 @section('content')
-  <form method="POST" action="/index.php/account/special/create_sp">
+  <form method="POST" action="/index.php/special/create_sp">
     <fieldset>
       <legend>Add Special Permission Number</legend>
 

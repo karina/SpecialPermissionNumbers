@@ -70,7 +70,8 @@ return array(
 		'mysql' => array(
 			'driver'   => 'mysql',
 			'host'     => 'cs336-60.rutgers.edu',
-			'database' => 'test',
+			// 'database' => 'test',
+			'database' => 'leos_testDB',
 			'username' => 'csuser',
 			'password' => 'csd0a21a',
 			'charset'  => 'utf8',
