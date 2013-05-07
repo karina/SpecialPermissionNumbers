@@ -29,6 +29,10 @@
             </li>
             <li class="has-dropdown">
               <a href="/index.php/ranking/student_rank">Students</a>
+              <ul class="dropdown">
+                <li><a href="/index.php/email/new_email">New Email</a></li>
+                <li><a href="/index.php/email/view_all">View All Emails</a></li>
+              </ul>
             </li>
           </ul>
 
