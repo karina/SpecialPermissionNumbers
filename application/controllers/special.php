@@ -82,7 +82,7 @@ class Special_Controller extends Base_Controller{
       "course_id" => Input::get('coursenumber'),
       "section_num" => Input::get('coursesection'),
       "sp_num" => Input::get("spnum"),
-
+      );
 
     $sp_number = new SpecialPermissionNum;
 
