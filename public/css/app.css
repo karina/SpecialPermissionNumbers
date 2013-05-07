@@ -35,18 +35,26 @@ margin: 0 auto;
   width: 50%;
 }
 
+.email_text textarea {
+  height: 300px;
+}
+
 legend {
   background-color: transparent;
-}
-form {
-    
 }
 
 fieldset {
   background-color: white; 
 }
 
+table {
+  width: 100%;
+}
 
+td {
+  width: 50%;
+  text-align: center;
+}
 
 .account {
   display: block;
