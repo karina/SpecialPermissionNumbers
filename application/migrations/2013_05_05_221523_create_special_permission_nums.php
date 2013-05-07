@@ -16,6 +16,10 @@ class Create_Special_Permission_Nums {
 			$table->integer('section_num');
 			$table->integer('sp_num');
 
+			// Status mapping:
+			// 0 = not taken
+			// 1 = taken
+			// add as needed?
 			$table->integer('status');
 			$table->string('student',64)->nullable();
 		});
