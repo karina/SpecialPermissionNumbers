@@ -40,20 +40,21 @@ class Special_Controller extends Base_Controller{
   }
 
   public function post_create_sp() {
+    // Create new sp number and add to special_permission_nums table
     $params = array(
       "course_id" => Input::get('coursenumber'),
       "section_num" => Input::get('coursesection'),
-      "sp_num" => Input::get("sp_num"),
+      "sp_num" => Input::get("spnum"),
 
       "status" => 0,
       "student" => null
     );
 
-    $sp_number = new Special_permission_num;
+    $sp_number = new SpecialPermissionNum;
 
     $sp_number->fill($params);
     $sp_number->save();
 
-    return View::make('special.create_sp');
+    return Redirect::to('special/create_sp');
   }
 }
