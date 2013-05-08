@@ -23,7 +23,7 @@ class Create_Special_Permission_Nums {
 			// 0 = not taken
 			// 1 = taken
 			// add as needed?
-			$table->integer('status');
+			$table->integer('status')->default(0);
 			$table->string('student',64)->nullable();
 
 			// CONSTRAINTS
