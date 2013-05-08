@@ -11,13 +11,15 @@ class Create_Users {
 	{
     Schema::create('users', function($table) {
       $table->engine = 'InnoDB';
-
+      
       // ATTRIBUTES
       $table->increments('id');
 
       $table->string('net_id', 64);
       $table->string('passwd', 64);
 
+      // CONSTRAINTS
+      $table->index('net_id');
     });
   }
 

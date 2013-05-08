@@ -19,6 +19,9 @@ class Create_Rooms {
 
 			$table->integer('room_num');
 			$table->integer('max_seats');
+
+			// CONSTRAINTS
+      // $table->index('room_num');
 		});
 	}
 

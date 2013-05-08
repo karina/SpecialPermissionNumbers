@@ -26,6 +26,10 @@ class Create_Permrequests {
 		  $table->integer('status')->default(0);
 			$table->string('comment',1000)->default('');
 			$table->string('rating')->default('Undecided'); 
+
+			// CONSTRAINTS
+			// $table->foreign('net_id')->references('net_id')->on('students')->on_delete('cascade')->on_update('cascade');
+			// $table->foreign('course_id')->references('course_id')->on('courses')->on_delete('cascade')->on_update('cascade');
 		}); 
 	}
 

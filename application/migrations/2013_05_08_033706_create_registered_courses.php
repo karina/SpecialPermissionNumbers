@@ -15,9 +15,12 @@ class Create_Registered_Courses {
 			// ATTRIBUTES
 			$table->increments('id');
 
-			$table->string('net_id',64);
+			$table->string('net_id', 64);
 			$table->integer('course_id');
 			$table->float('grade');
+
+			// CONSTRAINTS
+			// $table->foreign('net_id')->references('net_id')->on('students')->on_delete('cascade')->on_update('cascade');
 		});
 	}
 

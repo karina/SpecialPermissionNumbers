@@ -19,6 +19,9 @@ class Create_Emails {
 			$table->timestamp('created_at');
 			$table->timestamp('updated_at');
 			$table->text('email_body');
+
+			// CONSTRAINTS
+			// $table->foreign('net_id')->references('net_id')->on('professors')->on_delete('cascade')->on_update('cascade');
 		});
 	}
 
