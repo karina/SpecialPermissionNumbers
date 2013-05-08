@@ -33,22 +33,5 @@
 </fieldset>
     <br>
   @endforeach
-<form method="POST" action=/index.php/special/all_request >
-  <fieldset>
-    <div class="drop">
-      <div class="large-6 columns">
-      <label> Drop Student Request</label>
-       <input type="text" name="coursenumber" id="coursenumber">
-      </div>
-    </div>
-
-  <div class="row">
-    <div class="large-6 columns">
-      <input class="nice blue radius button prof_view_req_drop" type="submit" value="submit">
-    </div>
-  </div>
-
-  </fieldset>
-</form>
 
 @endsection
