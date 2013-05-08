@@ -42,7 +42,7 @@ class Special_Controller extends Base_Controller{
 
   public function get_prof_view_requests(){
       
-    $allrequests = Permrequest::order_by('course_id','desc')->get();
+    $allrequests = Professor::where('net_id', '=', Auth::user()->net_id)->first()->perm_requests();
 
     return View::make('special.prof_view_requests')->with_allrequests($allrequests);
   
