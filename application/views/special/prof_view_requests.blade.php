@@ -1,6 +1,6 @@
-@layout('layouts/student')
+@layout('layouts/professor')
 @section('content')
-
+<h4> Special Permission requests </h4>
   @foreach($allrequests as $req)
 <fieldset>
  <div class="row">
@@ -10,7 +10,8 @@
             Second Section Choice:{{ $req->second}}<br>
             Third Section Choice:{{ $req->third}}<br>
             NET ID: {{ $req->net_id}}<br>
-        
+            Status: {{$req->status}}<br>
+            Ranking: {{$req->rating}}<br>
            <div class="large-3 coulmns">
             <br> <input class="nice blue radius button prof_view_req_edit" type="submit" value="edit rank ">           </div>
           <div class="large-3 coulmns">

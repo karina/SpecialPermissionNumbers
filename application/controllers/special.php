@@ -7,7 +7,7 @@ class Special_Controller extends Base_Controller{
     
     return View::make('special.request_sp');
   }
-
+//students request sp#
   public function post_request_sp(){
     // TODO: check that user is a student
     
@@ -23,7 +23,7 @@ class Special_Controller extends Base_Controller{
       "net_id" => Auth::user()->net_id,
       "first" => Input::get('sec1'),
       "second" => Input::get('sec2'),
-      "third" => Input::get('sec3')
+      "third" => Input::get('sec3'),
     );
 
 
@@ -63,7 +63,7 @@ class Special_Controller extends Base_Controller{
     return View::make('special.addcourses');
   }
   
-
+//professors add courses
    public function post_addcourses(){
     $params = array(
       

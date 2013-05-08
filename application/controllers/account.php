@@ -20,10 +20,10 @@ class Account_Controller extends Base_Controller {
     if(Auth::attempt($params)) {
 
       if($student = Student::where('net_id', '=', Auth::user()->net_id)->first())
-        return Redirect::to('account/studentedit');
+        return Redirect::to('special/all_requests');
        
       else
-        return Redirect::to('special/create_sp');
+        return Redirect::to('special/prof_view_requests');
     }
     else
       return Redirect::to('account/login')->with('login_errors', true);
