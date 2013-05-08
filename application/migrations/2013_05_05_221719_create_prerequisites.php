@@ -12,7 +12,7 @@ class Create_Prerequisites {
 		Schema::create('prerequisites', function($table) {
 			$table->increments('id');
 
-			$table->integer('cid');
+			$table->integer('course_id');
 			$table->integer('set_id');
 			$table->integer('prereq');
 		});

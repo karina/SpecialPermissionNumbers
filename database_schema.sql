@@ -15,13 +15,13 @@ CREATE TABLE Student(
 );
 
 -- Courses that students have taken/are taking
--- cid is NOT a foreign key
+-- course_id is NOT a foreign key
 CREATE TABLE Registered_course(
-	cid INT,
+	course_id INT,
 	net_id VARCHAR(64),
 	grade REAL,
 
-	PRIMARY KEY(cid, net_id),
+	PRIMARY KEY(course_id, net_id),
 	FOREIGN KEY(net_id) REFERENCES Student(net_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
@@ -35,8 +35,8 @@ CREATE TABLE Professor(
 );
 
 -- Students' special permission requests
-CREATE TABLE Request(
-	cid INT,
+CREATE TABLE Permrequest(
+	course_id INT,
 	net_id INT,
 
 	status,			-- status of request
@@ -46,8 +46,8 @@ CREATE TABLE Request(
 	second INT,		-- second choice
 	third INT,		-- third choice
 	comment VARCHAR(5000),
-	PRIMARY KEY(cid, net_id),
-	FOREIGN KEY(cid) REFERENCES Course(cid)
+	PRIMARY KEY(course_id, net_id),
+	FOREIGN KEY(course_id) REFERENCES Course(course_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY(net_id) REFERENCES Student(net_id)
@@ -58,18 +58,18 @@ CREATE TABLE Request(
 -- Special permission numbers that prof manages
 -- 10 numbers per section
 CREATE TABLE Special_permission_num(
-	cid INT,
+	course_id INT,
 	section_num INT,
 	sp_num INT,
 
 	stud VARCHAR(64),
 	status,
 
-	PRIMARY KEY(cid, section_num, sp_num),
-	FOREIGN KEY(cid) REFERENCES Course_section(cid)
+	PRIMARY KEY(course_id, section_num, sp_num),
+	FOREIGN KEY(course_id) REFERENCES Course_section(course_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
-	FOREIGN KEY(section_num) REFERENCES Course_section(cid)
+	FOREIGN KEY(section_num) REFERENCES Course_section(course_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY(stud) REFERENCES Student(net_id)
@@ -78,17 +78,17 @@ CREATE TABLE Special_permission_num(
 );
 
 -- Course sections
--- cid is in the form: XXXYYY, where xxx is the department number
+-- course_id is in the form: XXXYYY, where xxx is the department number
 -- and yyy is course number
 CREATE TABLE Course_section(
-	cid INT,
+	course_id INT,
 	section_num INT,
 
 	prof VARCHAR(64) NOT NULL,
 	max_students INT NOT NULL,
 	num_students INT NOT NULL,
 
-	PRIMARY KEY(cid, section_num),
+	PRIMARY KEY(course_id, section_num),
 	FOREIGN KEY(prof) REFERENCES Professor(net_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
@@ -96,12 +96,12 @@ CREATE TABLE Course_section(
 
 -- Prerequisites
 CREATE TABLE Prerequisite(
-	cid INT,
+	course_id INT,
 	set_id INT,
 	prereq INT,
 
-	PRIMARY KEY(cid, set_id, prereq),
-	FOREIGN KEY(cid) REFERENCES Course_section(cid)
+	PRIMARY KEY(course_id, set_id, prereq),
+	FOREIGN KEY(course_id) REFERENCES Course_section(course_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 )
@@ -109,16 +109,16 @@ CREATE TABLE Prerequisite(
 -- Needs constraint: every room must meet in at least one location
 -- Times and locations of courses
 CREATE TABLE Located_In(
-	cid INT,
+	course_id INT,
 	section_num INT,
 	room_num VARCHAR(64),
 	meeting_time TIME, -- HOW TO STORE MEETING TIMES?
 
-	PRIMARY KEY(cid, section_num, room_num, meeting_time),
-	FOREIGN KEY(cid) REFERENCES Course_section(cid)
+	PRIMARY KEY(course_id, section_num, room_num, meeting_time),
+	FOREIGN KEY(course_id) REFERENCES Course_section(course_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
-	FOREIGN KEY(section_num) REFERENCES Course_section(cid)
+	FOREIGN KEY(section_num) REFERENCES Course_section(course_id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY(room_num) REFERENCES Room(room_num)

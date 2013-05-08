@@ -38,11 +38,11 @@ Route::get('/', function()
 });
 
 Route::controller('account');
-Route::controller('ranking');
-Route::controller('special');
-Route::controller('room');
-
 Route::controller('email');
+Route::controller('ranking');
+Route::controller('room');
+Route::controller('special');
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers

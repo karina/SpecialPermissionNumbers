@@ -22,12 +22,9 @@
             <li class="has-dropdown">
               <a href="/index.php/account/professor">Account</a>
               <ul class="dropdown">
-                <li>
-                  <a href="/index.php/account/student_edit">Edit Account</a>
-                </li>
-                <li>
-                  <a href="/index.php/special/request_sp">Request Special Perm Number</a>
-                </li>
+                <li> <a href="/index.php/account/studentedit">Edit Account</a> </li>
+                <li> <a href="/index.php/special/request_sp">Request Special Perm Number</a> </li>
+                <li> <a href="/index.php/special/all_requests">View Requests</a></li>
               </ul>
             </li>
             <li class="divider"></li>

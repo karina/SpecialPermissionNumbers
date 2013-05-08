@@ -12,7 +12,7 @@ class Create_Special_Permission_Nums {
 		Schema::create('special_permission_nums', function($table) {
 			$table->increments('id');
 
-			$table->integer('cid');
+			$table->integer('course_id');
 			$table->integer('section_num');
 			$table->integer('sp_num');
 

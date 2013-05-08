@@ -18,7 +18,5 @@ class Ranking_Controller extends Base_Controller{
     
 
   }
-
-
 }
 
