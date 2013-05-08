@@ -11,8 +11,7 @@ class Special_Controller extends Base_Controller{
   public function post_request_sp(){
     // TODO: check that user is a student
     
-    $course = Course::where('course_id', '=', Input::get('coursenum'))
-      ->first();
+    $course = Course::where('course_id', '=', Input::get('coursenum'))->first();
 
     if (is_null($course)) {
       return Redirect::to('special/request_sp')->with('error', 'Unknown Course Entered');
