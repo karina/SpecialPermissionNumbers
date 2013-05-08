@@ -12,7 +12,7 @@
       </div>
      <div class="large-6 columns">
           <label> Course Section </label>
-          <input type ="text" name="sec_num">
+          <input type ="text" name="section_num">
     </div>
      <div class="large-6 columns">
           <label> Maximum Amount of Students Allowed in Course </label>
