@@ -99,26 +99,30 @@ class Special_Controller extends Base_Controller{
      
       $courses->fill($params);
       $courses->save();
-
+     
       return Redirect::to('special/addprereq');
   
  }
- /*  public function post_addprereq(){
-     
-     $child=Prereq::where ('prereq','=', Input::get('child_id'))->first();
-     
-     
-     $params = array(
-        "prereq"=> $child->child_id
-      );
-
-      $prereq= new Prereq;
-
-      $prereq = Prereq::create($params);
+   public function post_addprereq(){
       
-      return Redirect::to('special/addprereq');
+     $params = Input::get('prereq');
+     $course_id=Input::get('course_id');
+     $set=Input::get('set_id');
+  
+      
+      $pr = preg_split("/[\s,]+/", $params);
+      
+      foreach($pr as $p){
+        $prereq= new Prereq;  
+        $prereq->prereq = $p;
+        $prereq->course_id =$course_id;
+        $prereq->set_id=$set;
+        $prereq->save();
+      }
 
- }*/
+      return Redirect::to('special/addprereq')->with('error', 'Add another prereq set for this course');
+      
+ }
    
 
 
