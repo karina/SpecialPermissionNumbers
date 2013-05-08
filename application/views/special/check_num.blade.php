@@ -1,4 +1,4 @@
-@layout('layouts/professor')
+@layout('layouts/student')
 
 @section('content')
 
@@ -10,4 +10,6 @@
     @else
       No special permission number yet :(
     @endif
+
+    <a href="/index.php/special/all_requests" class="button">Go Back</a>
 @endsection
