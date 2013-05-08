@@ -25,6 +25,26 @@ class Special_Controller extends Base_Controller{
       "third" => Input::get('sec3')
     );
 
+    $course1 = Course::where('course_id', '=', Input::get('coursenum'))->where('sec_num', '=', $params['first'])->first();
+    $course2 = Course::where('course_id', '=', Input::get('coursenum'))->where('sec_num', '=', $params['second'])->first();
+    $course3 = Course::where('course_id', '=', Input::get('coursenum'))->where('sec_num', '=', $params['third'])->first();
+
+    if(is_null($course1))
+      return Redirect::to('special/request_sp')->with('error', "Section 1 doesn't exist");
+    if(is_null($course2))
+      return Redirect::to('special/request_sp')->with('error', "Section 2 doesn't exist");
+    if(is_null($course3))
+      return Redirect::to('special/request_sp')->with('error', "Section 3 doesn't exist");
+
+    if($course1->num_students >= $course1->max_students) {
+      return Redirect::to('special/request_sp')->with('error', 'Your first choice is full');
+    }
+    elseif($course2->num_students >= $course2->max_students) {
+      return Redirect::to('special/request_sp')->with('error', 'Your second choice is full');
+    }
+    elseif($course3->num_students >= $course3->max_students) {
+      return Redirect::to('special/request_sp')->with('error', 'Your third choice is full');
+    }
 
     $request = Permrequest::create($params);
 
@@ -179,5 +199,23 @@ class Special_Controller extends Base_Controller{
     $num = SpecialPermissionNum::where('course_id', '=', $req->course_id)->where('student','=', Auth::user()->net_id)->first();
 
     return View::make('special/check_num')->with_num($num);
+  }
+
+  public function post_check_num ($id) {
+
+    $req = Permrequest::find($id);
+    $num = SpecialPermissionNum::where('course_id', '=', $req->course_id)->where('student','=', Auth::user()->net_id)->first();
+    $course = Course::where('course_id', '=', $req->course_id)->where('sec_num', '=', $num->section_num)->first();
+
+    $course->num_students++;
+    $course->save();
+
+    $num->status = 2; //Used Number!
+    $num->save();
+
+    $req->status = 2; //Used Number!
+    $req->save();
+
+    return Redirect::to('special/all_requests');
   }
 }
