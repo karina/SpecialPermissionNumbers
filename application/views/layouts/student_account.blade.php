@@ -23,7 +23,7 @@
               <a href="/index.php/account/professor">Account</a>
               <ul class="dropdown">
                 <li>
-                  <a href="/index.php/account/student_edit">Edit Account</a>
+                  <a href="/index.php/account/studentedit">Edit Account</a>
                 </li>
                 <li>
                   <a href="/index.php/special/request_sp">Request Special Perm Number</a>
