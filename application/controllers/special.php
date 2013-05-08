@@ -26,7 +26,7 @@ class Special_Controller extends Base_Controller{
     );
 
 
-    $request = permrequest::create($params);
+    $request = Permrequest::create($params);
 
     return Redirect::to('special/all_requests');
   }
