@@ -10,6 +10,9 @@ class Create_Special_Permission_Nums {
 	public function up()
 	{
 		Schema::create('special_permission_nums', function($table) {
+			$table->engine = 'InnoDB';
+
+			// ATTRIBUTES
 			$table->increments('id');
 
 			$table->integer('course_id');
@@ -22,6 +25,10 @@ class Create_Special_Permission_Nums {
 			// add as needed?
 			$table->integer('status');
 			$table->string('student',64)->nullable();
+
+			// CONSTRAINTS
+			// $table->foreign('course_id')->references('course_id')->on('courses')->on_delete('cascade')->on_update('cascade');
+			// $table->foreign('section_num')->references('section_num')->on('courses')->on_delete('cascade')->on_update('cascade');
 		});
 	}
 	

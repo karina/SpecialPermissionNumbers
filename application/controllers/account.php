@@ -50,14 +50,13 @@ class Account_Controller extends Base_Controller {
       'passwd' => Hash::make(Input::get('passwd'))
     ); 
 
+    // Make new user and add to users table
+    $user = User::create(array('net_id' => $params['net_id'], 'passwd' => $params['passwd']));
+    $user->save();
+
     $prof = new Professor;
     $prof->fill($params); 
     $prof->save();
-
-    // Make new user and add to users table
-    $param = array('net_id' => $params['net_id'], 'passwd' => $params['passwd']);
-    $user = User::create($param);
-    $user->save();
 
     Auth::login($user);
 
@@ -85,13 +84,12 @@ class Account_Controller extends Base_Controller {
       'gpa' => Input::get('gpa')
     );
     
+    $user = User::create(array('net_id' => $params['net_id'], 'passwd' => $params['passwd']));
+    $user->save();
+
     $student = new Student;
     $student->fill($params);
     $student->save();
-    
-    $param = array('net_id' => $params['net_id'], 'passwd' => $params['passwd']);
-    $user = User::create($param);
-    $user->save();
 
     Auth::login($user);
 
