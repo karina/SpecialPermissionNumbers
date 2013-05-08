@@ -13,7 +13,8 @@
             Status: {{$req->status}}<br>
             Ranking: {{$req->rating}}<br>
            <div class="large-3 columns">
-            <br> <a class="nice blue radius button prof_view_req_edit" href="{{ URL::to(ranking/edit_rank/$req->id }}">Edit Rank</a></div>
+            <br> <a class="nice blue radius button prof_view_req_edit" href="/index.php/ranking/edit_rank/{{ $req->id }}">Edit Rank</a>
+           </div>
           <div class="large-3 columns">
             <br> <input class="nice blue radius button prof_view_req_edit" type="submit" value="edit status">           </div>     
         </div>

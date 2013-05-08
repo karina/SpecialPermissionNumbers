@@ -5,7 +5,7 @@ class Ranking_Controller extends Base_Controller{
 
     $req = Permrequest::find($id);
 
-    return View::make('ranking.student_rank')->with_req($req);
+    return View::make('ranking.edit_rank')->with_req($req);
   }
  
   public function post_edit_rank($id) {
