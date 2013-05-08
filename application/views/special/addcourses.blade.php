@@ -1,7 +1,7 @@
 @layout('layouts/professor')
 @section('content')
 
-
+<h4>Add Courses</h4>
 
  <form  method="post" action="">
   <fieldset>

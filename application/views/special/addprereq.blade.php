@@ -2,18 +2,16 @@
 @section('content')
 
 <script>
-function add_more_text_box(parent_id, child_name, child_id)
+function add_more_text_box(parent_id, child_id)
 {
   var myTable=document.getElementById(parent_id);
   var oDiv, oInput;
   oDiv = document.createElement('div');
-  oDiv.setAttribute('id', 'Name');
   myTable.appendChild(oDiv);
 
   oInput = document.createElement('input');
   oInput.setAttribute('type', 'text');
-  oInput.setAttribute('name', child_name);
-  oInput.setAttribute('id', child_id);
+  oInput.setAttribute('name', child_id);
   oDiv.appendChild(oInput);
 }
 var child_id = 1;
@@ -29,10 +27,13 @@ function child()
  
     <div id="add_more_div">
         <label>Add Prerequisite </label>
-         <div><input type="text" id="add_more" name="add_more[]" ></div>
+         <div><input type="text" id="add_more" name="child_id" /></div>
     </div>
-       <a href="javascript:;" onclick="return add_more_text_box('add_more_div','add_more[]',child());">Add Another Pre-req</a>
+       <a href="javascript:;" onclick="return add_more_text_box('add_more_div',child());">Add Another Pre-req</a>
   </fieldset>
+
+    <input class="nice blue radius button addprereq_submit" type="submit" value="submit">
+
 </form> 
 
 @endsection
