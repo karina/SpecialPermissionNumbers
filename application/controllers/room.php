@@ -6,12 +6,12 @@ class Room_Controller extends Base_Controller {
 
     $rooms = Room::all();
 
-    return View::make('rooms.view')->with_rooms($rooms);
+    return View::make('room.view')->with_rooms($rooms);
   }
 
   public function get_add () {
     
-    return View::make('rooms.add');
+    return View::make('room.add');
   }
 
   public function post_add () {
@@ -26,6 +26,6 @@ class Room_Controller extends Base_Controller {
     $room->fill($params);
     $room->save();
 
-    return Redirect::to('rooms/view');
+    return Redirect::to('room/view');
   }
 }

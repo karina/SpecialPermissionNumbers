@@ -27,8 +27,8 @@ class Create_Special_Permission_Nums {
 			$table->string('student',64)->nullable();
 
 			// CONSTRAINTS
-			// $table->foreign('course_id')->references('course_id')->on('courses')->on_delete('cascade')->on_update('cascade');
-			// $table->foreign('section_num')->references('section_num')->on('courses')->on_delete('cascade')->on_update('cascade');
+			$table->foreign('course_id')->references('course_id')->on('courses')->on_delete('cascade')->on_update('cascade');
+			$table->foreign('section_num')->references('section_num')->on('courses')->on_delete('cascade')->on_update('cascade');
 		});
 	}
 	

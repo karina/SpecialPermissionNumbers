@@ -20,7 +20,7 @@ class Create_Registered_Courses {
 			$table->float('grade');
 
 			// CONSTRAINTS
-			// $table->foreign('net_id')->references('net_id')->on('students')->on_delete('cascade')->on_update('cascade');
+			$table->foreign('net_id')->references('net_id')->on('students')->on_delete('cascade')->on_update('cascade');
 		});
 	}
 
