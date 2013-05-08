@@ -15,13 +15,14 @@ class Create_Rooms {
 			$table->engine = 'InnoDB';
 
 			// ATTRIBUTES
-			$table->increments('id');
+			// $table->increments('id');
 
 			$table->integer('room_num');
 			$table->integer('max_seats');
 
 			// CONSTRAINTS
-      $table->index('room_num');
+      // $table->index('room_num');
+      $table->primary('room_num');
 		});
 	}
 
