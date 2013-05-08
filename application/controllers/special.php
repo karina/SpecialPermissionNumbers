@@ -101,5 +101,35 @@ class Special_Controller extends Base_Controller{
     return Redirect::to('special/create_sp');
   }
 
+  //Prof Changes Status
+  
+  public function get_comment($id) {
+
+    $req = Permrequest::find($id);
+    
+    return View::make('special/status')->with_req($req);
+  }
+
+  public function post_comment($id) {
+    
+    $req = Permrequest::find($id);
+
+    $req->comment = Input::get('comment');
+    $req->save();
+
+    return Redirect::to('special/prof_view_requests');
+  }
+
+  //Give Special Permission Number
+
+  public function get_give_perm ($id, $sec) {
+
+    $req = Permrequest::find($id);
+    
+    $specs = SpecialPermissionNums::where('course_id', '=', $req->course_id)->where('section_num', '=', $sec);
+
+    return View::make('special/give_perm')->with_specs($specs);
+  }
+
 
 }
