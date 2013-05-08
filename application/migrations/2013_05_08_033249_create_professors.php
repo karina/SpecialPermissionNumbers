@@ -1,6 +1,6 @@
 <?php
 
-class Create_Profs {
+class Create_Professors {
 
 	/**
 	 * Make changes to the database.

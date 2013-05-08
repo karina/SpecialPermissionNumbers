@@ -1,6 +1,6 @@
 <?php
 
-class Create_Requests {
+class Create_Permrequests {
 
 	/**
 	 * Make changes to the database.
@@ -23,9 +23,9 @@ class Create_Requests {
 		  $table->integer('second');  // second choice
 		  $table->integer('third');   // third choice
 		
-		  $table->integer('status');
-		  $table->float('rating');
-		  $table->string('comment',1000);
+		  $table->integer('status')->default(0);
+			$table->string('comment',1000)->default('');
+			$table->string('rating')->default('Undecided'); 
 		}); 
 	}
 

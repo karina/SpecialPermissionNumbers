@@ -22,8 +22,6 @@ class Create_Courses {
 			$table->integer('max_students');
 			$table->integer('num_students');
 			$table->integer('room_num');		// simple implementation where course meets in only one room
-			
-			$table->foreign('net_id')->references('net_id')->on('professors');
 		});
 	}
 
