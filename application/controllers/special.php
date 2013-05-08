@@ -27,7 +27,7 @@ class Special_Controller extends Base_Controller{
     );
 
 
-    $request = Permrequest::create($params);
+    $request = permrequest::create($params);
 
     return Redirect::to('special/all_requests');
   }
@@ -84,7 +84,27 @@ class Special_Controller extends Base_Controller{
       return Redirect::to('special/addprereq');
   
  }
+ /*  public function post_addprereq(){
+     
+     $child=Prereq::where ('prereq','=', Input::get('child_id'))->first();
+     
+     
+     $params = array(
+        "prereq"=> $child->child_id
+      );
+
+      $prereq= new Prereq;
+
+      $prereq = Prereq::create($params);
+      
+      return Redirect::to('special/addprereq');
+
+ }*/
    
+
+
+
+
 
   public function post_create_sp() {
     // Create new sp number and add to special_permission_nums table

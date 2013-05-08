@@ -22,7 +22,7 @@
             <li class="has-dropdown">
               <a href="/index.php/special/create_sp">Courses</a>
               <ul class="dropdown">
-                <li><a href="/index.php/course/manage">Manage Courses</a></li>
+                <li><a href="/index.php/special/addcourses">Add Courses</a></li>
                 <li><a href="/index.php/special/create_sp">Create Special Perm Number</a></li>
                 <li><a href="/index.php/special/prof_view_requests">View all SP# requests</a></li>
                 <li><a href="/index.php/room/view">View Rooms</a></li>
