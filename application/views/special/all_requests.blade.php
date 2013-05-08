@@ -20,25 +20,5 @@
 </fieldset>
     <br>
   @endforeach
-<form method="POST" action=/index.php/special/all_requests>
-  <fieldset>
-    <div class="drop">
-      <div class="large-6 columns">
-      <label> Drop Course</label>
-       <input type="text" name="coursenumber" id="coursenumber">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-6 columns">
-          <input class="nice blue radius button allrequests_submit" type="submit" value="drop"  >
-      </div>
-    </div>
-
-
-
-
-  </fieldset>
-</form>
 
 @endsection
