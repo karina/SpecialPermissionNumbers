@@ -20,7 +20,7 @@ class Create_Prerequisites {
 			$table->integer('prereq');
 
 			// CONSTRAINTS
-			// $table->foreign('course_id')->references('course_id')->on('courses')->on_delete('cascade')->on_update('cascade');
+			$table->foreign('course_id')->references('course_id')->on('courses')->on_delete('cascade')->on_update('cascade');
 		});
 	}
 

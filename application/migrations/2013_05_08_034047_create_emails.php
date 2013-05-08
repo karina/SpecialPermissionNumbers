@@ -21,7 +21,7 @@ class Create_Emails {
 			$table->text('email_body');
 
 			// CONSTRAINTS
-			// $table->foreign('net_id')->references('net_id')->on('professors')->on_delete('cascade')->on_update('cascade');
+			$table->foreign('net_id')->references('net_id')->on('professors')->on_delete('cascade')->on_update('cascade');
 		});
 	}
 

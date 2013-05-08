@@ -20,7 +20,7 @@ class Create_Professors {
 			$table->string('email_addr', 64);
 
 			// CONSTRAINTS
-			// $table->index('net_id');
+			$table->index('net_id');
 
       $table->foreign('net_id')->references('net_id')->on('users')->on_delete('cascade')->on_update('cascade');
 		});
