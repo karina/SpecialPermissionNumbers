@@ -10,6 +10,9 @@ class Create_Profs {
 	public function up()
 	{
 		Schema::create('professors', function($table) {
+			$table->engine = 'InnoDB';
+
+			// ATTRIBUTES
 			$table->increments('id');
 
 			$table->string('net_id',64);

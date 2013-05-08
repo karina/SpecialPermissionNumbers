@@ -10,6 +10,9 @@ class Create_Registered_Courses {
 	public function up()
 	{
 		Schema::create('registered_courses', function($table) {
+			$table->engine = 'InnoDB';
+
+			// ATTRIBUTES
 			$table->increments('id');
 
 			$table->string('net_id',64);

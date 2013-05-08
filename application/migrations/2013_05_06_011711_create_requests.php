@@ -10,7 +10,10 @@ class Create_Requests {
 	public function up()
 	{
 		Schema::create('permrequests', function($table) {
-		  $table->increments('id');
+		  $table->engine = 'InnoDB';
+
+			// ATTRIBUTES
+			$table->increments('id');
 		
 		  $table->string('net_id',64);
 		  $table->integer('course_id');

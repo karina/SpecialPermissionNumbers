@@ -10,6 +10,9 @@ class Create_Students {
 	public function up()
 	{
     Schema::create('students', function($table) {
+      $table->engine = 'InnoDB';
+
+      // ATTRIBUTES
       $table->increments('id');
 
       $table->string('net_id',64);

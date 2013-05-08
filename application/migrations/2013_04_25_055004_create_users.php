@@ -10,6 +10,9 @@ class Create_Users {
 	public function up()
 	{
     Schema::create('users', function($table) {
+      $table->engine = 'InnoDB';
+
+      // ATTRIBUTES
       $table->increments('id');
 
       $table->string('net_id', 64);

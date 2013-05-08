@@ -10,6 +10,9 @@ class Create_Prerequisites {
 	public function up()
 	{
 		Schema::create('prerequisites', function($table) {
+			$table->engine = 'InnoDB';
+
+			// ATTRIBUTES
 			$table->increments('id');
 
 			$table->integer('course_id');

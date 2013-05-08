@@ -12,6 +12,9 @@ class Create_Rooms {
 		// Currently, building info is stored in room_num as "BUILDING-NUM"
 		// ex. "HILL-252"
 		Schema::create('rooms', function($table) {
+			$table->engine = 'InnoDB';
+
+			// ATTRIBUTES
 			$table->increments('id');
 
 			$table->integer('room_num');

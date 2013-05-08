@@ -10,6 +10,9 @@ class Create_Special_Permission_Nums {
 	public function up()
 	{
 		Schema::create('special_permission_nums', function($table) {
+			$table->engine = 'InnoDB';
+
+			// ATTRIBUTES
 			$table->increments('id');
 
 			$table->integer('course_id');

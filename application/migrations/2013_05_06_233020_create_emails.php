@@ -10,6 +10,9 @@ class Create_Emails {
 	public function up()
 	{
 		Schema::create('emails', function($table) {
+			$table->engine = 'InnoDB';
+
+			// ATTRIBUTES
 			$table->increments('id');
 
 			$table->string('net_id',64);

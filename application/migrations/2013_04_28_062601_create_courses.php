@@ -10,6 +10,9 @@ class Create_Courses {
 	public function up()
 	{
 		Schema::create('courses', function($table) {
+			$table->engine = 'InnoDB';
+
+			// ATTRIBUTES
 			$table->increments('id');
 
 			$table->integer('course_id');
