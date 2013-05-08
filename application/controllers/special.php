@@ -25,9 +25,9 @@ class Special_Controller extends Base_Controller{
       "third" => Input::get('sec3')
     );
 
-    $course1 = Course::where('course_id', '=', Input::get('coursenum'))->where('sec_num', '=', $params['first'])->first();
-    $course2 = Course::where('course_id', '=', Input::get('coursenum'))->where('sec_num', '=', $params['second'])->first();
-    $course3 = Course::where('course_id', '=', Input::get('coursenum'))->where('sec_num', '=', $params['third'])->first();
+    $course1 = Course::where('course_id', '=', Input::get('coursenum'))->where('section_num', '=', $params['first'])->first();
+    $course2 = Course::where('course_id', '=', Input::get('coursenum'))->where('section_num', '=', $params['second'])->first();
+    $course3 = Course::where('course_id', '=', Input::get('coursenum'))->where('section_num', '=', $params['third'])->first();
 
     if(is_null($course1))
       return Redirect::to('special/request_sp')->with('error', "Section 1 doesn't exist");
@@ -88,7 +88,7 @@ class Special_Controller extends Base_Controller{
     $params = array(
       
       "course_id"=> Input::get('c_id'), 
-      "sec_num"=> Input::get('sec_num'),
+      "section_num"=> Input::get('section_num'),
       "net_id"=> Auth::user()->net_id,
       "max_students"=> Input::get('max_students'),
       "num_students"=> Input::get('num_students'),
@@ -209,7 +209,7 @@ class Special_Controller extends Base_Controller{
 
     $req = Permrequest::find($id);
     $num = SpecialPermissionNum::where('course_id', '=', $req->course_id)->where('student','=', Auth::user()->net_id)->first();
-    $course = Course::where('course_id', '=', $req->course_id)->where('sec_num', '=', $num->section_num)->first();
+    $course = Course::where('course_id', '=', $req->course_id)->where('section_num', '=', $num->section_num)->first();
 
     $course->num_students++;
     $course->save();
