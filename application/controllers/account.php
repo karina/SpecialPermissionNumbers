@@ -61,7 +61,7 @@ class Account_Controller extends Base_Controller {
     Auth::login($user);
 
     // TO DO: CHANGE THIS TO SOMETHING ELSE
-    return Redirect::to('special/create_sp');
+    return Redirect::to('special/prof_view_requests');
   }
 
   // STUDENT SIDE
