@@ -124,4 +124,20 @@ class Account_Controller extends Base_Controller {
     return Redirect::to('account/studentedit')->with('success', true);
   }
 
+  public function get_courses () {
+
+    return View::make('account/courses');
+  }
+
+  public function post_courses () {
+
+    $registered = new Registeredcourse;
+
+    $registered->fill(array('net_id' => Auth::user()->net_id, 'course_id' => Input::get('course_id'), 'grade' => Input::get('grade')));
+
+    $registered->save();
+
+    return Redirect::to('account/courses'); 
+  }
+
 }
