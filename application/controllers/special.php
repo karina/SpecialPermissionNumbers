@@ -125,11 +125,39 @@ class Special_Controller extends Base_Controller{
   public function get_give_perm ($id, $sec) {
 
     $req = Permrequest::find($id);
-    
-    $specs = SpecialPermissionNums::where('course_id', '=', $req->course_id)->where('section_num', '=', $sec);
+    $specs = SpecialPermissionNum::where('course_id', '=', $req->course_id)->where('section_num', '=', $sec)->get();
 
-    return View::make('special/give_perm')->with_specs($specs);
+    $arr = array();
+
+    foreach ($specs as $spec){
+      $arr[$spec->sp_num] = $spec->sp_num;
+    }
+
+    return View::make('special/give_perm')->with_arr($arr);
+  }
+
+  public function post_give_perm($id, $sec) {
+    $req = Permrequest::find($id);
+    $specs = SpecialPermissionNum::where('course_id', '=', $req->course_id)->where('section_num', '=', $sec)->where('sp_num', '=',Input::get('special_nums'))->first();
+
+    $req->status = 1; //Means given Number
+    $req->save();
+
+    
+    $specs->status = 1; //Given number
+    $specs->student = $req->net_id;
+    $specs->save();
+
+    return Redirect::to('special/prof_view_requests');
   }
 
 
+  public function get_check_num ($id) {
+
+    $req = Permrequest::find($id);
+
+    $num = SpecialPermissionNum::where('course_id', '=', $req->course_id)->where('student','=', Auth::user()->net_id)->first();
+
+    return View::make('special/check_num')->with_num($num);
+  }
 }
