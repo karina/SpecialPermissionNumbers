@@ -2,8 +2,8 @@
 
 class Room extends Eloquent {
 
-  public static $timestamp = false;
   public static $table = 'rooms';
+  public static $timestamps = false;
 
   protected $fillable = array('room_num', 'max_seats');
 

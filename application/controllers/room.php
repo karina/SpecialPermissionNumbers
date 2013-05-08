@@ -26,6 +26,6 @@ class Room_Controller extends Base_Controller {
     $room->fill($params);
     $room->save();
 
-    return Redirect::to('rooms/view');
+    return Redirect::to('room/view');
   }
 }
