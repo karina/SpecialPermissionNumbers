@@ -1,18 +1,22 @@
 <?php
 class Ranking_Controller extends Base_Controller{
 
-  public function get_student_rank(){
-   // echo eloquent_to_json(Student::all());
-  // die;
-    return View::make('ranking.student_rank');
+  public function get_edit_rank ($id) {
+
+    $req = Permrequest::find($id);
+
+    return View::make('ranking.edit_rank')->with_req($req);
   }
  
- public function post_student_rank(){
-   return Redirect::to('ranking/student_rank');
- }
+  public function post_edit_rank($id) {
+
+    $req = Permrequest::find($id);
+
+    $req->rating = Input::get('Ranking');
+    $req->save();
     
-
-
+    return Redirect::to('special/prof_view_requests');
+  }
 
 }
 

@@ -5,16 +5,17 @@
 <fieldset>
  <div class="row">
    <div class="requestblock">
-       <h6> Course Number: {{ $req->course_id}} </h4>
+       <h6> Course Number: {{ $req->course_id}} </h6>
             First Section Choice: {{ $req->first}} <br>
             Second Section Choice:{{ $req->second}}<br>
             Third Section Choice:{{ $req->third}}<br>
             NET ID: {{ $req->net_id}}<br>
             Status: {{$req->status}}<br>
             Ranking: {{$req->rating}}<br>
-           <div class="large-3 coulmns">
-            <br> <input class="nice blue radius button prof_view_req_edit" type="submit" value="edit rank ">           </div>
-          <div class="large-3 coulmns">
+           <div class="large-3 columns">
+            <br> <a class="nice blue radius button prof_view_req_edit" href="/index.php/ranking/edit_rank/{{ $req->id }}">Edit Rank</a>
+           </div>
+          <div class="large-3 columns">
             <br> <input class="nice blue radius button prof_view_req_edit" type="submit" value="edit status">           </div>     
         </div>
     </div>
