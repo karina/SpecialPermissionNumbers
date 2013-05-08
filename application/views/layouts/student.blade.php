@@ -25,6 +25,7 @@
                 <li> <a href="/index.php/account/studentedit">Edit Account</a> </li>
                 <li> <a href="/index.php/special/request_sp">Request Special Perm Number</a> </li>
                 <li> <a href="/index.php/special/all_requests">View Requests</a></li>
+                <li><a href="/index.php/account/courses">Add Courses</a></li>
               </ul>
             </li>
             <li class="divider"></li>
