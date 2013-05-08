@@ -5,8 +5,14 @@
   <div class="row">
 
     @if ($num != NULL)
-      <p>Your special permission number is: {{ $num->sp_num }}</p>
-      <input type="submit" class="button" value="Use It!">
+      @if ($num->status == 2)
+        You've used this one already!
+      @else
+        <p>Your special permission number is: {{ $num->sp_num }}</p>
+        {{ Form::open() }}
+        <input type="submit" class="button" value="Use It!">
+      {{ Form::close() }}
+      @endif
     @else
       No special permission number yet :(
     @endif
